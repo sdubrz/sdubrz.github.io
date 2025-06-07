@@ -1,6 +1,6 @@
-[Hux Blog](https://huangxuan.me)
+[Blog](https://sdubrz.github.io/)
 ================================
-
+> based on 黄玄的博客
 > I never expected this to become popular.
 
 ![](http://huangxuan.me/img/blog-desktop.jpg)
