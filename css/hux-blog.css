@@ -1687,9 +1687,17 @@ img::-moz-selection {
 .page-fullscreen footer .copyright a:hover {
   color: #ddd;
 }
-.MathJax_SVG_Display {
+/* MathJax Overflow Support for both v2 and v3 */
+.MathJax_SVG_Display,
+.MathJax[display="block"],
+mjx-container[display="block"] {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
+  margin: 1em 0;
+}
+/* Ensure proper spacing for inline math */
+mjx-container[display="inline"] {
+  margin: 0 0.125em;
 }
 .no-scroll {
   overflow-y: hidden;
