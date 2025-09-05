@@ -59,6 +59,7 @@ class Solution:
             b = nums1[ptrs1[1] - right]
             return float(a + b) / 2
         else:
+            # 从两个数组中获取
             if nums1[ptrs1[1]] <= nums2[ptrs2[0]]:
                 # 第一个数组有效数字完全比第二个小
                 if ptrs1[1] - ptrs1[0] < left:  # 完全在第二个数组里
@@ -69,15 +70,76 @@ class Solution:
                     right = right - (ptrs2[1] - ptrs2[0] + 1)
                     ptrs2[1] = ptrs2[0]-1
                     return self.find_avg_with_index(nums1, nums2, ptrs1, ptrs2, left, right)
-
             elif nums2[ptrs2[1]] <= nums1[ptrs1[0]]:
                 # 第二个数组有效数字完全比第一个数组小
-                pass
+                # 偷懒了，直接交换个顺序
+                return self.find_avg_with_index(nums2, nums1, ptrs2, ptrs1, left, right)
             else:
                 # 进行分裂
-                pass
+                m11 = (ptrs1[0]+ptrs1[1]) // 2
+                m12 = (ptrs1[0]+ptrs1[1]+1) // 2
+                m21 = (ptrs2[0] + ptrs2[1]) // 2
+                m22 = (ptrs2[0] + ptrs2[1]+1) // 2
+                # 更新左侧
+                if m11 > ptrs1[0] and m21 > ptrs2[0]:
+                    if nums1[m11-1] <= nums2[m21-1]:
+                        left = left - (m11-ptrs1[0])
+                        ptrs1[0] = m11
+                    else:
+                        left = left - (m21 - ptrs2[0])
+                        ptrs2[0] = m21
+                else:
+                    if m11 == ptrs1[0] and m21 == ptrs2[0]:
+                        if nums1[m11] <= nums2[m21]:
+                            ptrs1[0] = m11 + 1
+                        else:
+                            ptrs2[0] = m21 + 1
+                        left = left - 1
+                    elif m11 == ptrs1[0] and m21 > ptrs2[0]:
+                        if nums1[m11] <= nums2[m21-1]:
+                            ptrs1[0] = m11 + 1
+                            left -= 1
+                        else:
+                            left = left - (m21 - ptrs2[0])
+                            ptrs2[0] = m21
+                    else:  # 也就是m21==ptrs2[0]
+                        if nums1[m11-1] <= nums2[m21]:
+                            left = left - (m11 - ptrs1[0])
+                            ptrs1[0] = m11
+                        else:
+                            ptrs2[0] = m21 + 1
+                            left -= 1
+                # 更新右侧
+                if m12 < ptrs1[1] and m22 < ptrs2[1]:
+                    if nums1[m12+1] >= nums2[m22+1]:
+                        ptrs1[1] = m12
+                        right = right - (ptrs1[1]-m12)
+                    else:
+                        ptrs2[1] = m22
+                        right = right - (ptrs2[1]-m22)
+                else:
+                    if m12 == ptrs1[1] and m22 == ptrs2[1]:
+                        if nums1[m12] >= nums2[m22]:
+                            ptrs1[1] = m12 - 1
+                        else:
+                            ptrs2[1] = m22 - 1
+                        right = right - 1
+                    elif m12 == ptrs1[1] and m22 < ptrs2[1]:
+                        if nums1[m12] > nums2[m22+1]:
+                            ptrs1[1] = m12 - 1
+                            right -= 1
+                        else:
+                            right = right - (ptrs2[1]-m22)
+                            ptrs2[1] = m22
+                    else:
+                        if nums1[m12+1] > nums2[m22]:
+                            right = right - (ptrs1[1]-m12)
+                            ptrs1[1] = m12
+                        else:
+                            ptrs2[1] = m22 - 1
+                            right -= 1
 
-
+                return self.find_avg_with_index(nums1, nums2, ptrs1, ptrs2, left, right)
 
     # O(log(m+n))  每次大概排除掉一半的量
     def findMedianSortedArrays2(self, nums1: List[int], nums2: List[int]) -> float:
@@ -88,11 +150,9 @@ class Solution:
         return self.find_avg_with_index(nums1, nums2, ptrs1, ptrs2, left, right)
 
 
-
-
-
 if __name__ == '__main__':
-    nums1 = [3, 4]
-    nums2 = []
+    # 边界的处理还需要加强
+    nums1 = [1, 2, 3, 4]
+    nums2 = [5, 6]
     solution = Solution()
-    print(solution.findMedianSortedArrays(nums1, nums2))
+    print(solution.findMedianSortedArrays2(nums1, nums2))
