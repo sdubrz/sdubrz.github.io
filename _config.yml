@@ -66,8 +66,8 @@ giscus:
   enable: true
   repo: "sdubrz/sdubrz.github.io"
   repo_id: "R_kgDOO3ks7Q"
-  category: "General"
-  category_id: "DIC_kwDOO3ks7c4Cxfrs"
+  category: "Announcements"
+  category_id: "DIC_kwDOO3ks7c4CkOTs"
   mapping: "pathname"
   reactions_enabled: true
   theme: "preferred_color_scheme"
