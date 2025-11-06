@@ -1,13 +1,7 @@
 source 'https://rubygems.org'
 
-# GitHub Pages 官方 gem
+# GitHub Pages 官方 gem - 包含所有必要的依赖
 gem "github-pages", group: :jekyll_plugins
 
-# 必需的插件
+# Jekyll 分页插件（GitHub Pages 支持）
 gem "jekyll-paginate"
-
-# 构建工具
-gem "rake"
-
-# Ruby 3.0+ 兼容性
-gem "webrick", "~> 1.7"
