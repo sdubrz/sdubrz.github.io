@@ -68,7 +68,7 @@ giscus:
   repo_id: "R_kgDOO3ks7Q"
   category: "Announcements"
   category_id: "DIC_kwDOO3ks7c4CkOTs"
-  mapping: "pathname"
+  mapping: "title"
   reactions_enabled: true
   theme: "preferred_color_scheme"
   lang: "zh-CN"
