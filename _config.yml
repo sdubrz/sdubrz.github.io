@@ -1,10 +1,10 @@
 # Site settings
-title: Rz Blog
-SEOTitle: 荣正的博客 | Rz Blog
+title: wlgsd Blog
+SEOTitle: 卧龙岗散淡的人的博客 | wlgsd Blog
 header-img: img/home-bg.jpg
 email: 1621342585@qq.com
-description: "这里是 @荣正 的个人博客，与你一起发现更大的世界"
-keyword: "荣正, 博客, 个人网站, 互联网, 算法, 机器学习"
+description: "这里是 @卧龙岗散淡的人 的个人博客，与你一起发现更大的世界"
+keyword: "卧龙岗散淡的人, 博客, 个人网站, 互联网, 算法, 机器学习"
 url: "https://sdubrz.github.io" # your host, for absolute URL
 baseurl: "" # for example, '/blog' if your blog hosted on 'host/blog'
 
@@ -86,7 +86,7 @@ netease_comment: false
 
 # Sidebar settings
 sidebar: true # whether or not using Sidebar.
-sidebar-about-description: "要做一个有 swag 的程序员 <br> React Team @ Meta"
+sidebar-about-description: "要做一个笔耕不辍的学习者"
 sidebar-avatar: /img/head_image.JPG # use absolute URL, seeing it's used in both `/` and `/about/`
 
 # Featured Tags
@@ -103,12 +103,6 @@ page-mathjax: false
 # Friends
 friends:
   [
-    { title: "乱序（Midare）", href: "http://mida.re/" },
-    { title: "Ebn Zhang", href: "https://ebnbin.dev/" },
-    { title: "Kun Qian", href: "http://kunq.me" },
-    { title: "Sherry Woo", href: "https://sherrywoo.me/" },
-    { title: "SmdCn", href: "http://blog.smdcn.net" },
-    { title: "JiyinYiyong", href: "http://tiye.me/" },
-    { title: "DHong Say", href: "http://dhong.co" },
-    { title: "尹峰以为", href: "http://ingf.github.io/" },
+    { title: "很嗨的追风少年", href: "https://www.zhihu.com/people/hong-wu-97-83" },
+    { title: "麦克斯韦的妖精", href: "https://blog.csdn.net/john_bian" },
   ]
