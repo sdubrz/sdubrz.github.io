@@ -1,4 +1,5 @@
 <!-- Giscus 评论系统 -->
+<div id="giscus-container"></div>
 <script src="https://giscus.app/client.js"
         data-repo="{{ site.giscus.repo }}"
         data-repo-id="{{ site.giscus.repo_id }}"
@@ -14,6 +15,34 @@
         data-loading="lazy"
         crossorigin="anonymous"
         async>
+</script>
+
+<!-- Giscus 调试信息 -->
+<div id="giscus-debug" style="margin-top: 10px; padding: 10px; background-color: #f0f0f0; font-family: monospace; font-size: 12px; display: none;">
+    <strong>Giscus Debug Info:</strong><br>
+    Repo: {{ site.giscus.repo }}<br>
+    Category: {{ site.giscus.category }}<br>
+    Mapping: {{ site.giscus.mapping }}<br>
+    Page Path: {{ page.url }}<br>
+</div>
+
+<script>
+// 显示调试信息的函数
+function showGiscusDebug() {
+    const debugDiv = document.getElementById('giscus-debug');
+    if (debugDiv) {
+        debugDiv.style.display = 'block';
+    }
+}
+
+// 检查Giscus是否加载成功
+setTimeout(() => {
+    const giscusFrame = document.querySelector('.giscus-frame');
+    if (!giscusFrame) {
+        console.warn('Giscus未正确加载，显示调试信息');
+        showGiscusDebug();
+    }
+}, 5000);
 </script>
 
 <!-- 评论区提示信息 -->
