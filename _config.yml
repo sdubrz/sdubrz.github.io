@@ -58,8 +58,8 @@ kramdown:
       line_numbers: true
       start_line: 1
 
-# Disqus settings
-disqus_username: hux
+# Disqus settings (禁用，使用Giscus代替)
+# disqus_username: hux
 
 # Giscus 评论系统设置
 giscus:
