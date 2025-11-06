@@ -1699,6 +1699,35 @@ mjx-container[display="block"] {
 mjx-container[display="inline"] {
   margin: 0 0.125em;
 }
+
+/* Busuanzi 访问统计样式 */
+#busuanzi_container_page_pv {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  font-style: italic;
+}
+
+#busuanzi_container_page_pv i {
+  margin-right: 5px;
+}
+
+#busuanzi_container_site_uv,
+#busuanzi_container_site_pv {
+  font-size: 12px;
+  color: #999;
+}
+
+@media only screen and (min-width: 768px) {
+  #busuanzi_container_page_pv {
+    font-size: 16px;
+  }
+  
+  #busuanzi_container_site_uv,
+  #busuanzi_container_site_pv {
+    font-size: 13px;
+  }
+}
+
 .no-scroll {
   overflow-y: hidden;
 }
