@@ -61,6 +61,18 @@ kramdown:
 # Disqus settings
 disqus_username: hux
 
+# Giscus 评论系统设置
+giscus:
+  enable: true
+  repo: "sdubrz/sdubrz.github.io"
+  repo_id: "R_kgDOO3ks7Q"
+  category: "General"
+  category_id: "DIC_kwDOO3ks7c4Cxfrs"
+  mapping: "pathname"
+  reactions_enabled: true
+  theme: "preferred_color_scheme"
+  lang: "zh-CN"
+
 # Netease settings
 netease_comment: false
 

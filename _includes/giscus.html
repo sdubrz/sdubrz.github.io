@@ -1,0 +1,28 @@
+<!-- Giscus 评论系统 -->
+<script src="https://giscus.app/client.js"
+        data-repo="{{ site.giscus.repo }}"
+        data-repo-id="{{ site.giscus.repo_id }}"
+        data-category="{{ site.giscus.category }}"
+        data-category-id="{{ site.giscus.category_id }}"
+        data-mapping="{{ site.giscus.mapping }}"
+        data-strict="0"
+        data-reactions-enabled="{% if site.giscus.reactions_enabled %}1{% else %}0{% endif %}"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="{{ site.giscus.theme }}"
+        data-lang="{{ site.giscus.lang }}"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+
+<!-- 评论区提示信息 -->
+<div class="giscus-notice" style="margin-top: 15px; padding: 15px; background-color: #f8f9fa; border-left: 4px solid #0085a1; border-radius: 4px;">
+    <p style="margin: 0; font-size: 13px; color: #666;">
+        <strong>💡 温馨提示：</strong><br>
+        • 评论需要使用 GitHub 账号登录<br>
+        • 支持 Markdown 语法和 LaTeX 数学公式（使用 $...$ 或 $$...$$ 包围）<br>
+        • 评论内容会同步保存到 <a href="https://github.com/{{ site.giscus.repo }}/discussions" target="_blank">GitHub Discussions</a><br>
+        • 请文明发言，共同维护良好的讨论环境 ✨
+    </p>
+</div>

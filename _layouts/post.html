@@ -96,6 +96,22 @@ layout: default
     </div>
 </article>
 
+<!-- Giscus 评论系统 -->
+{% if site.giscus.enable %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="comment-section">
+                <hr style="margin-top: 40px; margin-bottom: 40px;">
+                <h3 class="comment-title">💬 评论讨论</h3>
+                <p class="comment-description">欢迎在下方评论区与我讨论，您也可以点击 <a href="https://github.com/{{ site.giscus.repo }}/discussions" target="_blank">这里</a> 在 GitHub 上直接参与讨论。</p>
+                {% include giscus.html %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
 <!-- add support for mathjax by voleking-->
 {% if page.mathjax %}
   {% include mathjax_support.html %}
