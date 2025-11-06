@@ -45,20 +45,21 @@
 
     <!-- 反广告CSS -->
     <style>
-    /* 隐藏常见的广告元素 */
-    [id*="ad"], [class*="ad"], [id*="banner"], [class*="banner"],
-    [id*="sponsor"], [class*="sponsor"], iframe[src*="ads"],
-    iframe[src*="doubleclick"], iframe[src*="googlesyndication"],
-    div[style*="position: fixed"][style*="z-index"],
-    div[style*="position: absolute"][style*="z-index: 999"] {
+    /* 隐藏常见的广告元素 - 使用更精确的选择器 */
+    [id^="google_ads"], [class^="google-ads"], [id^="advert"], [class^="advert"],
+    [id^="banner-ad"], [class^="banner-ad"], [id^="sponsor"], [class^="sponsor"], 
+    iframe[src*="googlesyndication"], iframe[src*="doubleclick"],
+    iframe[src*="googleadservices"], iframe[src*="/ads/"],
+    div[id*="google_ads"], div[class*="google-ads"] {
         display: none !important;
         visibility: hidden !important;
         opacity: 0 !important;
     }
     
-    /* 阻止浮动广告 */
-    body::before, body::after {
-        content: none !important;
+    /* 阻止明确的广告相关浮动元素 */
+    div[style*="position: fixed"][id*="ad"],
+    div[style*="position: absolute"][id*="ad"] {
+        display: none !important;
     }
     </style>
 
