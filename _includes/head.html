@@ -43,6 +43,25 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
+    <!-- 反广告CSS -->
+    <style>
+    /* 隐藏常见的广告元素 */
+    [id*="ad"], [class*="ad"], [id*="banner"], [class*="banner"],
+    [id*="sponsor"], [class*="sponsor"], iframe[src*="ads"],
+    iframe[src*="doubleclick"], iframe[src*="googlesyndication"],
+    div[style*="position: fixed"][style*="z-index"],
+    div[style*="position: absolute"][style*="z-index: 999"] {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+    }
+    
+    /* 阻止浮动广告 */
+    body::before, body::after {
+        content: none !important;
+    }
+    </style>
+
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="{{ " /css/bootstrap.min.css" | prepend: site.baseurl }}">
 
@@ -67,5 +86,36 @@
     <script></script>
 
     <!-- Busuanzi 访问统计 -->
+        <!-- Busuanzi 统计 -->
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <!-- 反广告注入代码 -->
+    <script>
+    // 阻止常见的广告注入
+    (function() {
+        // 阻止常见广告域名
+        const adDomains = [
+            'googleadservices.com',
+            'googlesyndication.com',
+            'doubleclick.net',
+            'adsystem.com',
+            'adnxs.com'
+        ];
+        
+        const originalAppendChild = Node.prototype.appendChild;
+        Node.prototype.appendChild = function(child) {
+            if (child.tagName === 'SCRIPT' && child.src) {
+                for (let domain of adDomains) {
+                    if (child.src.includes(domain)) {
+                        console.log('Blocked ad script:', child.src);
+                        return child;
+                    }
+                }
+            }
+            return originalAppendChild.apply(this, arguments);
+        };
+    })();
+    </script>
+
+</head>
 </head>
