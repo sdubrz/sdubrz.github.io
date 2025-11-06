@@ -1,0 +1,49 @@
+<!-- 权限测试版Giscus -->
+<div class="giscus-test" style="margin-top: 30px; border: 2px solid #28a745; padding: 20px; border-radius: 8px;">
+    <h4 style="color: #28a745; margin-top: 0;">🔧 权限测试版评论区</h4>
+    <p style="font-size: 14px; color: #666;">
+        这个版本使用最基本的配置来测试GitHub权限问题
+    </p>
+    
+    <script src="https://giscus.app/client.js"
+            data-repo="sdubrz/sdubrz.github.io"
+            data-repo-id="R_kgDOO3ks7Q"
+            data-category="General"
+            data-category-id="DIC_kwDOO3ks7c4Cxfrs"
+            data-mapping="url"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="bottom"
+            data-theme="light"
+            data-lang="zh-CN"
+            crossorigin="anonymous"
+            async>
+    </script>
+</div>
+
+<script>
+// 监听Giscus错误
+window.addEventListener('message', function(event) {
+    if (event.origin !== 'https://giscus.app') return;
+    
+    const giscusData = event.data;
+    if (giscusData.error) {
+        console.error('Giscus Error:', giscusData.error);
+        
+        // 显示错误信息
+        const errorDiv = document.createElement('div');
+        errorDiv.style.cssText = 'background-color: #f8d7da; color: #721c24; padding: 10px; margin: 10px 0; border-radius: 4px; border: 1px solid #f5c6cb;';
+        errorDiv.innerHTML = `
+            <strong>❌ Giscus错误：</strong><br>
+            ${giscusData.error.message || giscusData.error}<br>
+            <small>请检查GitHub仓库的Discussions设置和权限</small>
+        `;
+        
+        const testDiv = document.querySelector('.giscus-test');
+        if (testDiv) {
+            testDiv.appendChild(errorDiv);
+        }
+    }
+});
+</script>

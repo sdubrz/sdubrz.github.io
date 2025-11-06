@@ -1,0 +1,82 @@
+---
+layout: page
+title: "Giscus故障排查检查清单"
+description: "系统性解决评论系统问题"
+header-img: "img/bg-little-universe.jpg"
+---
+
+# 🔧 Giscus评论系统故障排查清单
+
+## ✅ 必须完成的设置步骤：
+
+### 1. 仓库基础设置
+- [ ] 仓库是公开的（public）
+- [ ] 仓库已启用Discussions功能
+- [ ] 有至少一个讨论分类存在
+
+**检查方法：** 访问 [仓库设置页面](https://github.com/sdubrz/sdubrz.github.io/settings) → Features → Discussions
+
+### 2. Giscus App安装
+- [ ] 已安装Giscus GitHub App
+- [ ] App有仓库的Discussions权限
+- [ ] App可以访问指定仓库
+
+**安装链接：** [https://github.com/apps/giscus](https://github.com/apps/giscus)
+
+### 3. 讨论分类设置
+- [ ] 确认分类名称正确
+- [ ] 获取正确的Category ID
+- [ ] 分类允许新讨论
+
+**检查方法：** 访问 [讨论分类页面](https://github.com/sdubrz/sdubrz.github.io/discussions/categories)
+
+### 4. 配置参数验证
+- [ ] Repository ID正确
+- [ ] Category ID正确
+- [ ] Mapping方式合适
+
+**获取配置：** 使用 [Giscus配置工具](https://giscus.app/zh-CN)
+
+## 🐛 常见错误及解决方案：
+
+### "Unable to create discussion"
+**原因：** Giscus App未安装或权限不足
+**解决：** 重新安装并配置Giscus App
+
+### "Discussion category not found"
+**原因：** Category ID错误
+**解决：** 使用Giscus配置工具重新获取正确的ID
+
+### "Repository not found"
+**原因：** 仓库私有或Repository ID错误
+**解决：** 确保仓库公开且ID正确
+
+### 评论不显示但能提交
+**原因：** Mapping方式或Category不匹配
+**解决：** 检查已有discussions的标题和分类
+
+## 🛠️ 调试工具：
+
+### 浏览器控制台
+按F12打开开发者工具，查看Console标签页的错误信息
+
+### Giscus官方工具
+使用官方配置工具验证设置：[giscus.app](https://giscus.app/zh-CN)
+
+### GitHub API检查
+验证仓库权限和设置：
+```bash
+curl "https://api.github.com/repos/sdubrz/sdubrz.github.io"
+```
+
+## 📞 需要帮助？
+
+如果按照上述步骤仍然无法解决问题，请提供：
+
+1. 错误的具体信息（截图）
+2. 浏览器控制台的错误日志
+3. 已完成的检查项目
+
+---
+
+*最后更新：2025年11月6日*
