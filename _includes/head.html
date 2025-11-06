@@ -92,7 +92,7 @@
 
     <!-- 反广告注入代码 -->
     <script>
-    // 阻止常见的广告注入
+    // 阻止常见的广告注入，但不影响评论系统
     (function() {
         // 阻止常见广告域名
         const adDomains = [
@@ -103,9 +103,23 @@
             'adnxs.com'
         ];
         
+        // 允许的评论系统域名
+        const allowedDomains = [
+            'giscus.app',
+            'github.com',
+            'busuanzi.ibruce.info'
+        ];
+        
         const originalAppendChild = Node.prototype.appendChild;
         Node.prototype.appendChild = function(child) {
             if (child.tagName === 'SCRIPT' && child.src) {
+                // 检查是否是允许的域名
+                const isAllowed = allowedDomains.some(domain => child.src.includes(domain));
+                if (isAllowed) {
+                    return originalAppendChild.apply(this, arguments);
+                }
+                
+                // 检查是否是广告域名
                 for (let domain of adDomains) {
                     if (child.src.includes(domain)) {
                         console.log('Blocked ad script:', child.src);
@@ -118,5 +132,4 @@
     })();
     </script>
 
-</head>
 </head>
