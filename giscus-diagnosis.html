@@ -1,0 +1,103 @@
+---
+layout: page
+title: "Giscus条件诊断"
+description: "检查为什么仓库不满足Giscus条件"
+header-img: "img/bg-little-universe.jpg"
+---
+
+# 🔍 Giscus仓库条件诊断
+
+## 📋 检查清单
+
+### 条件1: 仓库必须是公开的 ✅
+**状态：** 通过  
+**验证：** 您的仓库 `sdubrz/sdubrz.github.io` 是公开可访问的
+
+### 条件2: Discussions功能必须启用 ✅ 
+**状态：** 通过  
+**验证：** [Discussions页面](https://github.com/sdubrz/sdubrz.github.io/discussions) 可以访问
+
+### 条件3: Giscus App必须已安装 ❓
+**状态：** 需要检查  
+**这是最可能的问题所在**
+
+## 🛠️ 解决步骤
+
+### 第一步：检查Giscus App安装状态
+
+1. 访问您的 [GitHub Apps安装页面](https://github.com/settings/installations)
+2. 查找 "giscus" 应用
+3. 如果没有找到，需要安装
+
+### 第二步：安装Giscus App
+
+**如果未安装或配置不正确：**
+
+1. 访问 [Giscus App页面](https://github.com/apps/giscus)
+2. 点击 **"Install"** 按钮
+3. 选择安装到 `sdubrz/sdubrz.github.io` 仓库
+4. 确保授权以下权限：
+   - ✅ **Discussions** (读写权限)
+   - ✅ **Metadata** (读取权限) 
+   - ✅ **Contents** (读取权限)
+
+### 第三步：验证安装
+
+安装完成后：
+1. 重新访问 [Giscus配置页面](https://giscus.app/zh-CN)
+2. 输入仓库名：`sdubrz/sdubrz.github.io`
+3. 应该会显示 ✅ 符合条件
+
+## 🐛 常见问题
+
+### "Repository not found"
+- **原因：** App权限不足或仓库名错误
+- **解决：** 重新安装App并确保仓库名正确
+
+### "Discussions not enabled"
+- **原因：** 仓库未启用Discussions功能
+- **解决：** 在仓库设置中启用Discussions
+
+### "App not installed"
+- **原因：** Giscus GitHub App未安装到该仓库
+- **解决：** 按照上述步骤安装App
+
+## 📞 需要帮助？
+
+如果按照上述步骤操作后仍然显示不满足条件，请：
+
+1. 截图Giscus页面显示的具体错误信息
+2. 确认您有仓库的管理员权限
+3. 检查是否有组织级别的限制
+
+---
+
+## 🧪 当前配置测试
+
+当前Giscus配置：
+- **仓库：** sdubrz/sdubrz.github.io
+- **分类：** Announcements
+- **映射：** pathname
+
+<div style="border: 2px dashed #28a745; padding: 20px; margin: 20px 0; border-radius: 8px;">
+<h4>🔧 实时配置测试</h4>
+<p>以下是使用当前配置的测试评论区：</p>
+
+<script src="https://giscus.app/client.js"
+        data-repo="sdubrz/sdubrz.github.io"
+        data-repo-id="R_kgDOO3ks7Q"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOO3ks7c4CkOTs"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+</div>
+
+**如果上方评论区正常显示，说明配置正确。如果不显示，则需要按照上述步骤检查App安装。**
