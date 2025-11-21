@@ -99,30 +99,34 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.side-catalog .catalog-body .h1_nav,
-.side-catalog .catalog-body .h2_nav {
+.side-catalog .catalog-body .h1_nav {
   margin-left: 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+.side-catalog .catalog-body .h2_nav {
+  margin-left: 8px;
   font-size: 13px;
   font-weight: bold;
 }
 .side-catalog .catalog-body .h3_nav {
-  margin-left: 6px;
-  font-size: 13px;
+  margin-left: 16px;
+  font-size: 12px;
   font-weight: bold;
 }
 .side-catalog .catalog-body .h4_nav {
-  margin-left: 12px;
-  font-size: 12px;
+  margin-left: 24px;
+  font-size: 11px;
 }
 .side-catalog .catalog-body .h4_nav a {
-  max-width: 170px;
+  max-width: 160px;
 }
 .side-catalog .catalog-body .h5_nav .h6_nav {
-  margin-left: 18px;
-  font-size: 12px;
+  margin-left: 32px;
+  font-size: 11px;
 }
 .side-catalog .catalog-body .h5_nav .h6_nav a {
-  max-width: 170px;
+  max-width: 150px;
 }
 .side-catalog .catalog-body .active {
   border-radius: 4px;
@@ -186,7 +190,7 @@
     Multi-line snackbar height: 80 dp
     Text: Roboto Regular 14 sp
     Action button: Roboto Medium 14 sp, all-caps text
-    Default background fill: #323232 100%
+    Default background fill: #323232 100%  
   */
     left: 0px;
     right: 0px;
@@ -214,7 +218,7 @@
   width: 160px;
   overflow: hidden;
   user-select: none;
-  color: #000000;
+  color: #000;
   text-transform: uppercase;
   border-radius: 3px;
   outline-color: #a3a3a3;
@@ -231,7 +235,7 @@
   height: 100%;
   /*font-family: 'Roboto';*/
   font-size: 1em;
-  color: #000000;
+  color: #000;
   text-transform: uppercase;
 }
 .paper-button.colored,
@@ -264,13 +268,13 @@ button.paper-button {
   /*font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;*/
   font-size: 1em;
   line-height: 25px;
-  background-color: #ffffff;
+  background-color: #fff;
 }
 .paper-button input[type="submit"] {
   outline-color: #a3a3a3;
 }
 .paper-button.colored.raised-button input[type="submit"] {
-  color: #ffffff;
+  color: #fff;
 }
 /** Shadows **/
 .paper-shadow-animated.paper-shadow {
@@ -1687,7 +1691,6 @@ img::-moz-selection {
 .page-fullscreen footer .copyright a:hover {
   color: #ddd;
 }
-/* MathJax Overflow Support for both v2 and v3 */
 .MathJax_SVG_Display,
 .MathJax[display="block"],
 mjx-container[display="block"] {
@@ -1695,96 +1698,9 @@ mjx-container[display="block"] {
   -webkit-overflow-scrolling: touch;
   margin: 1em 0;
 }
-/* Ensure proper spacing for inline math */
 mjx-container[display="inline"] {
   margin: 0 0.125em;
 }
-
-/* Busuanzi 访问统计样式 */
-#busuanzi_container_page_pv {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 14px;
-  font-style: italic;
-}
-
-#busuanzi_container_page_pv i {
-  margin-right: 5px;
-}
-
-#busuanzi_container_site_uv,
-#busuanzi_container_site_pv {
-  font-size: 12px;
-  color: #999;
-}
-
-@media only screen and (min-width: 768px) {
-  #busuanzi_container_page_pv {
-    font-size: 16px;
-  }
-  
-  #busuanzi_container_site_uv,
-  #busuanzi_container_site_pv {
-    font-size: 13px;
-  }
-}
-
-/* Giscus 评论系统样式 */
-.comment-section {
-  margin-top: 50px;
-  padding: 30px 0;
-}
-
-.comment-title {
-  font-size: 24px;
-  font-weight: 600;
-  color: #404040;
-  margin-bottom: 15px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid #0085a1;
-  display: inline-block;
-}
-
-.comment-description {
-  color: #666;
-  font-size: 14px;
-  margin-bottom: 25px;
-  line-height: 1.6;
-}
-
-.comment-description a {
-  color: #0085a1;
-  text-decoration: none;
-}
-
-.comment-description a:hover {
-  text-decoration: underline;
-}
-
-/* Giscus iframe 样式调整 */
-.giscus {
-  margin-top: 20px;
-}
-
-.giscus-frame {
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-@media only screen and (max-width: 768px) {
-  .comment-section {
-    margin-top: 30px;
-    padding: 20px 0;
-  }
-  
-  .comment-title {
-    font-size: 20px;
-  }
-  
-  .comment-description {
-    font-size: 13px;
-  }
-}
-
 .no-scroll {
   overflow-y: hidden;
 }
